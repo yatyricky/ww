@@ -51,6 +51,11 @@ window.onload = function() {
                 var role = obj.message;
                 if (characters.hasOwnProperty(obj.message) == true) {
                     role = characters[obj.message].name;
+
+                    var imgDiv = document.getElementById('image');
+                    var image = document.createElement("img");
+                    image.setAttribute("src", characters[obj.message].img);
+                    imgDiv.append(image);
                 }
                 msgDiv.innerHTML = role;
 
