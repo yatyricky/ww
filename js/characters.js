@@ -5,12 +5,12 @@ var characters = {
         "sort": 1
     },
     "st": {
-        "name": "高级村民",
+        "name": "高級村民",
         "img": "imgs/seniortownfolk.jpg",
         "sort": 1
     },
     "sr": {
-        "name": "预言家",
+        "name": "預言家",
         "img": "imgs/seer.jpg",
         "sort": 100
     },
@@ -20,17 +20,17 @@ var characters = {
         "sort": 101
     },
     "ht": {
-        "name": "猎人",
+        "name": "獵人",
         "img": "imgs/hunter.jpg",
         "sort": 102
     },
     "gd": {
-        "name": "守卫",
+        "name": "守衛",
         "img": "imgs/guard.jpg",
         "sort": 102
     },
     "fl": {
-        "name": "白痴",
+        "name": "白癡",
         "img": "imgs/fool.jpg",
         "sort": 102
     },
@@ -40,17 +40,17 @@ var characters = {
         "sort": 103
     },
     "tf": {
-        "name": "盗贼",
+        "name": "盜賊",
         "img": "imgs/thief.jpg",
         "sort": 103
     },
     "me": {
-        "name": "禁言长老",
+        "name": "禁言長老",
         "img": "imgs/mutingelder.jpg",
         "sort": 104
     },
     "rk": {
-        "name": "绣剑骑士",
+        "name": "銹劍騎士",
         "img": "imgs/rustsword.jpg",
         "sort": 104
     },
@@ -60,7 +60,7 @@ var characters = {
         "sort": 105
     },
     "br": {
-        "name": "驯熊师",
+        "name": "馴熊師",
         "img": "imgs/bear.jpg",
         "sort": 105
     },
@@ -85,7 +85,7 @@ var characters = {
         "sort": 200
     },
     "dm": {
-        "name": "恶魔",
+        "name": "惡魔",
         "img": "imgs/demon.jpg",
         "sort": 200
     }

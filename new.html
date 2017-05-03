@@ -6,21 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 
     <!-- stylesheets -->
-    <!-- <link href="css/style.css" rel="stylesheet"> -->
+    <link href="css/style.css" rel="stylesheet">
 
     <title>Werewolf Card Dealer - New Game</title>
 </head>
 <body>
-<div id="selected">
-    <ul id="selectedList">
-    </ul>
+<div id="container">
+    <div id="selected" class="block">
+        <div>已選角色</div>
+        <ul id="selectedList" class="list">
+        </ul>
+    </div>
+    <div id="available" class="block">
+        <div>可選角色</div>
+        <ul id="availableList" class="list">
+        </ul>
+    </div>
+    <div id="result"></div>
+    <button id="submit">確認板子</button>
+
 </div>
-<div id="available">
-    <ul id="availableList">
-    </ul>
-</div>
-<div id="result"></div>
-<button id="submit">确认板子</button>
 
 <script src="js/characters.js" type="text/javascript"></script>
 <script src="js/new.js" type="text/javascript"></script>
