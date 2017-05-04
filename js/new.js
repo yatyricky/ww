@@ -37,6 +37,47 @@ var addToList = function(e) {
     refreshSelected();
 }
 
+var renderResult = function(id) {
+    // hide button
+    var submitBtn = document.getElementById("submit");
+    var resultDOM = document.getElementById("result");
+    var container = document.getElementById("container");
+    emptyDOM(resultDOM);
+    container.removeChild(submitBtn);
+
+    var label = document.createElement("div");
+    label.setAttribute("class", "qrcode");
+    var link = document.createElement("a");
+    var share = "http://"+window.location.hostname + "/ww/#" + id;
+    new QRCode(label, share);
+    var url = "index.html#" + id;
+    link.innerHTML = share;
+    link.setAttribute("href", url);
+
+
+    resultDOM.appendChild(label);
+    resultDOM.appendChild(link);
+}
+
+var loadExistingGame = function() {
+    var game = window.location.hash.substr(1);
+    var request = 'api/getgame.php?game='+game;
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', request);
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            selected = JSON.parse(xhr.responseText);
+            if (selected.length > 0) {
+                refreshSelected();
+                renderResult(game);
+            }
+        } else {
+        }
+    };
+    xhr.send();
+}
+
 window.onload = function() {
     var listDOM = document.getElementById("availableList");
 
@@ -55,6 +96,8 @@ window.onload = function() {
         listDOM.appendChild(li);
     }
 
+    loadExistingGame();
+
     var submitBtn = document.getElementById("submit");
     var resultDOM = document.getElementById("result");
     submitBtn.onclick = function() {
@@ -69,17 +112,7 @@ window.onload = function() {
                 emptyDOM(resultDOM);
 
                 if (obj.result == 1) {
-                    var label = document.createElement("div");
-                    label.innerHTML = "请给大家分享此链接以查看自己手牌：";
-                    var link = document.createElement("a");
-                    var share = window.location.hostname + "/ww/#" + obj.message;
-                    var url = "index.html#" + obj.message;
-                    link.innerHTML = share;
-                    link.setAttribute("href", url);
-
-
-                    resultDOM.appendChild(label);
-                    resultDOM.appendChild(link);
+                    renderResult(obj.message);
                 } else {
                     resultDOM.innerHTML = obj.message;
                 }

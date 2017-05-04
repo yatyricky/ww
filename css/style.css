@@ -7,27 +7,27 @@ body {
     margin: 0 auto;
 }
 
-.block {
-    background: #e2e1e0;
-    border-radius: 2px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    padding: 0.5em;
-    margin-bottom: 1em;
-}
-
-.block > div {
+.caption {
     color: rgba(0,0,0,0.55);
     font-size: 1.2em;
     font-weight: bold;
 }
 
+.block {
+    height: 40vh;
+    overflow-y: auto;
+    margin-bottom: 2vh;
+}
+
 .list {
+    margin: 0px;
     padding-left: 0px; 
 }
 .list > li {
     display: inline-block;
     list-style-type: none;
     background: #ffffff;
+    border-radius: 2px;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     width: 10%;
     overflow-x: hidden;
@@ -41,6 +41,39 @@ body {
 }
 .list > li > img {
     max-width: 100%;
+}
+
+#submit {
+    width: 96%;
+    height: 40px;
+    font-size: 1em;
+
+    border-width: 0;
+    outline: none;
+    border-radius: 2px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+
+    background-color: #2ecc71;
+    color: #ecf0f1;
+}
+
+.qrcode {
+    display: block;
+    width: 256px;
+    margin: 0 auto;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: rgba(0,0,0,0.75);
+    width: 96%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+#image > img {
+    width: 96%;
 }
 
 @media (max-width: 960px) {

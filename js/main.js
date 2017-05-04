@@ -34,8 +34,6 @@ window.onload = function() {
         var game = window.location.hash.substr(1);
         var request = 'api/main.php?game='+game+'&cid='+clientID;
 
-        console.log("request = " + request);
-
         var xhr = new XMLHttpRequest();
         xhr.open('GET', request);
         xhr.onload = function() {
@@ -59,9 +57,7 @@ window.onload = function() {
                 }
                 msgDiv.innerHTML = role;
 
-                console.log(obj);
             } else {
-                console.log(xhr.status);
             }
         };
         xhr.send();
