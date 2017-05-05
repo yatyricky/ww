@@ -29,7 +29,7 @@ window.onload = function() {
     var clientID = getClientID();
     var resultDiv = document.getElementById('result');
     if (clientID == -1) {
-        resultDiv.innerHTML = 'Get yourself a fucking new phone!';
+        resultDiv.innerHTML = 'Unsupported device.';
     } else {
         var game = window.location.hash.substr(1);
         var request = 'api/main.php?game='+game+'&cid='+clientID;
