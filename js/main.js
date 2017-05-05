@@ -53,7 +53,7 @@ window.onload = function() {
                     var imgDiv = document.getElementById('image');
                     var image = document.createElement("img");
                     image.setAttribute("src", characters[obj.message].img);
-                    imgDiv.append(image);
+                    imgDiv.appendChild(image);
                 }
                 msgDiv.innerHTML = role;
 
