@@ -48,7 +48,7 @@ var renderResult = function(id) {
     var label = document.createElement("div");
     label.setAttribute("class", "qrcode");
     var link = document.createElement("a");
-    var share = "http://"+window.location.hostname + "/ww/#" + id;
+    var share = "https://"+window.location.hostname + "/ww/#" + id;
     new QRCode(label, share);
     var url = "index.html#" + id;
     link.innerHTML = share;
