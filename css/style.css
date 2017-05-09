@@ -73,7 +73,7 @@ a {
 }
 
 #image > img {
-    width: 96%;
+    width: 256px;
 }
 
 @media (max-width: 960px) {
@@ -83,5 +83,8 @@ a {
     }
     .list > li {
         width: 22%;
+    }
+    #image > img {
+        width: 96%;
     }
 }

@@ -67,6 +67,7 @@ var loadExistingGame = function() {
     xhr.open('GET', request);
     xhr.onload = function() {
         if (xhr.status === 200) {
+            console.log(xhr.responseText);
             selected = JSON.parse(xhr.responseText);
             if (selected.length > 0) {
                 refreshSelected();

@@ -28,8 +28,9 @@ var setClientID = function(val) {
 window.onload = function() {
     var clientID = getClientID();
     var resultDiv = document.getElementById('result');
+    var msgDiv = document.getElementById('message');
     if (clientID == -1) {
-        resultDiv.innerHTML = 'Unsupported device.';
+        resultDiv.innerHTML = '不支持的設備';
     } else {
         var game = window.location.hash.substr(1);
         var request = 'api/main.php?game='+game+'&cid='+clientID;
@@ -40,23 +41,26 @@ window.onload = function() {
             if (xhr.status === 200) {
                 var obj = JSON.parse(xhr.responseText);
 
-                if (obj.hasOwnProperty("assignedID")) {
-                    setClientID(obj.assignedID);
+                if (obj.result == "Fail") {
+                    console.log(xhr);
+                    window.location.replace("./new.html");
+                } else {
+
+                    if (obj.hasOwnProperty("assignedID")) {
+                        setClientID(obj.assignedID);
+                    }
+
+                    var role = obj.message;
+                    if (characters.hasOwnProperty(obj.message) == true) {
+                        role = characters[obj.message].name;
+
+                        var imgDiv = document.getElementById('image');
+                        var image = document.createElement("img");
+                        image.setAttribute("src", characters[obj.message].img);
+                        imgDiv.appendChild(image);
+                    }
+                    msgDiv.innerHTML = role;
                 }
-
-                resultDiv.innerHTML = obj.result;
-                var msgDiv = document.getElementById('message');
-                var role = obj.message;
-                if (characters.hasOwnProperty(obj.message) == true) {
-                    role = characters[obj.message].name;
-
-                    var imgDiv = document.getElementById('image');
-                    var image = document.createElement("img");
-                    image.setAttribute("src", characters[obj.message].img);
-                    imgDiv.appendChild(image);
-                }
-                msgDiv.innerHTML = role;
-
             } else {
             }
         };
